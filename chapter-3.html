@@ -177,7 +177,23 @@
                 </a>
             </li>
         </ul>
-        
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter-1.html">Basic Machine Learning in NLP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter-2.html">Understanding Word Embeddings</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">00) Reversed string</a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -720,12 +736,12 @@ letter test
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X: {&#39;ad&#39;, &#39;di&#39;, &#39;ar&#39;, &#39;ra&#39;, &#39;se&#39;, &#39;is&#39;, &#39;ap&#39;, &#39;pa&#39;}
-Y: {&#39;ag&#39;, &#39;ar&#39;, &#39;ra&#39;, &#39;gr&#39;, &#39;ap&#39;, &#39;ph&#39;, &#39;pa&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X: {&#39;se&#39;, &#39;pa&#39;, &#39;di&#39;, &#39;is&#39;, &#39;ad&#39;, &#39;ap&#39;, &#39;ra&#39;, &#39;ar&#39;}
+Y: {&#39;gr&#39;, &#39;pa&#39;, &#39;ph&#39;, &#39;ag&#39;, &#39;ap&#39;, &#39;ra&#39;, &#39;ar&#39;}
 
-Union: {&#39;ad&#39;, &#39;di&#39;, &#39;ar&#39;, &#39;ag&#39;, &#39;gr&#39;, &#39;ra&#39;, &#39;se&#39;, &#39;is&#39;, &#39;ap&#39;, &#39;ph&#39;, &#39;pa&#39;}
-Intersection: {&#39;ra&#39;, &#39;ap&#39;, &#39;ar&#39;, &#39;pa&#39;}
-Difference: {&#39;is&#39;, &#39;ad&#39;, &#39;di&#39;, &#39;se&#39;}
+Union: {&#39;se&#39;, &#39;gr&#39;, &#39;pa&#39;, &#39;di&#39;, &#39;is&#39;, &#39;ph&#39;, &#39;ag&#39;, &#39;ad&#39;, &#39;ap&#39;, &#39;ra&#39;, &#39;ar&#39;}
+Intersection: {&#39;ap&#39;, &#39;ra&#39;, &#39;ar&#39;, &#39;pa&#39;}
+Difference: {&#39;is&#39;, &#39;ad&#39;, &#39;se&#39;, &#39;di&#39;}
 
 &#39;se&#39; is include in X
 &#39;se&#39; is NOT include　in Y
@@ -814,7 +830,7 @@ Observe the result by giving a sentence, e.g., “I couldn’t believe that I co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Do&#39;nt Trl!ol! Farm Fi!rst!! I need the Bu!f!f! Well payeld Bo!r!&quot;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Do&#39;nt Tor!ll! Farm Fr!i!ts! I need the Bfuf!!! Well pelayd Br!o!&quot;
 </pre></div>
 </div>
 </div>
