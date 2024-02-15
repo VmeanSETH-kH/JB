@@ -1,0 +1,952 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Basic Machine Learning in NLP &#8212; VmeanSETH-kH Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Understanding Word Embeddings" href="chapter-2.html" />
+    <link rel="prev" title="Welcome to VmeanSETH-kH’s Jupyter NoteBook" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="VmeanSETH-kH Jupyter Book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="VmeanSETH-kH Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to VmeanSETH-kH’s Jupyter NoteBook
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter-1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter-1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Basic Machine Learning in NLP</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-sentiment-analysis">Task: Sentiment Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">Data Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hand-coded-rules">Hand-coded Rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-classifier-with-bag-of-words">Naive Bayes Classifier with Bag of Words</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understand-the-naive-bayes-principle">Understand the Naive Bayes Principle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-extraction-bag-of-words">Feature Extraction: Bag of Words</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-a-naive-bayes-classifier">Training a Naive Bayes Classifier</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-classifier-with-tf-idf">Naive Bayes Classifier with TF-IDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-significance-testing">Statistical Significance Testing</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-machine-learning-in-nlp">
+<h1>Basic Machine Learning in NLP<a class="headerlink" href="#basic-machine-learning-in-nlp" title="Link to this heading">#</a></h1>
+<section id="task-sentiment-analysis">
+<h2>Task: Sentiment Analysis<a class="headerlink" href="#task-sentiment-analysis" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Sentiment Analysis is a task to determine the emotional tone behind a body of text.</p></li>
+<li><p>This is especially useful in understanding customer opinions in product reviews, where sentiments are broadly categorized as positive or negative.</p></li>
+<li><p>For example, analyzing reviews on an e-commerce site can reveal customer satisfaction levels and preferences, aiding in better decision-making for both businesses and potential buyers.</p></li>
+<li><p>Similarly, in the context of book reviews, sentiment analysis can provide insights into readers’ reception of the content, style, and storytelling</p></li>
+</ul>
+</section>
+<section id="data-preparation">
+<h2>Data Preparation<a class="headerlink" href="#data-preparation" title="Link to this heading">#</a></h2>
+<p>Before diving into the models, the first step is to acquire and understand the dataset we will be using.</p>
+<ol class="arabic simple">
+<li><p><strong>Download Dataset</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Navigate to the <a class="reference external" href="https://ai.stanford.edu/~amaas/data/sentiment/">Large Movie Review Dataset v1.0 page</a> provided by Stanford AI Lab.</p></li>
+<li><p>Download the dataset titled ‘Large Movie Review Dataset v1.0’.</p></li>
+<li><p>This dataset is specifically curated for binary sentiment classification, making it ideal for our purposes.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Explore the Dataset</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Once downloaded, unzip the file and explore its structure. You’ll notice it’s divided into two main directories: train and test.
+Each of these contains neg (negative) and pos (positive) subdirectories.</p></li>
+<li><p>Familiarize yourself with the data by opening and reading a few sample files from both the neg and pos categories in both the train and test directories.
+This will give you a sense of the text data we’ll be classifying.</p></li>
+</ul>
+<p>Load train and test sets of the dataset and store them in lists.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># implement here</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="hand-coded-rules">
+<h2>Hand-coded Rules<a class="headerlink" href="#hand-coded-rules" title="Link to this heading">#</a></h2>
+<p>This section introduces you to the concept of rule-based classification, a fundamental approach in NLP. You’ll create a simple sentiment analyzer based on keyword matching.</p>
+<ol class="arabic simple">
+<li><p><strong>Prepare Keyword Sets</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Compile two lists of keywords: one representing positive sentiment (<span class="math notranslate nohighlight">\(PS\)</span>) and the other representing negative sentiment (<span class="math notranslate nohighlight">\(NS\)</span>).</p></li>
+<li><p>Think about common words that clearly convey positivity or negativity.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define lists of positive and negative keywords</span>
+<span class="c1"># PS =</span>
+<span class="c1"># NS =</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Count Keyword Matches</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>For a given input text <span class="math notranslate nohighlight">\(t\)</span>, calculate the number of words that appear in the <span class="math notranslate nohighlight">\(PS\)</span> set (<span class="math notranslate nohighlight">\(n_{PS}^{t}\)</span>) and in the <span class="math notranslate nohighlight">\(NS\)</span> set (<span class="math notranslate nohighlight">\(n_{NS}^{t}\)</span>).</p></li>
+<li><p>This step involves processing the text to identify and count the matching words.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_keywords</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">PS</span><span class="p">,</span> <span class="n">NS</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Counts the number of positive and negative keywords in a given text.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    text: The text to analyze.</span>
+<span class="sd">    PS: A set of positive keywords.</span>
+<span class="sd">    NS: A set of negative keywords.</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    A tuple containing the number of positive and negative keywords found.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="k">pass</span>
+  <span class="c1">#</span>
+  <span class="c1"># implement here</span>
+  <span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Create Decision Rules</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Develop your own set of rules to classify the sentiment as Positive or Negative based on <span class="math notranslate nohighlight">\(n_{PS}^{t}\)</span> and <span class="math notranslate nohighlight">\(n_{NS}^{t}\)</span>.</p></li>
+<li><p>For example, you might decide that a text is positive if <span class="math notranslate nohighlight">\(n_{PS}^{t}\)</span> is greater than <span class="math notranslate nohighlight">\(n_{NS}^{t}\)</span>, negative if the opposite is true, or neutral/undecided if the counts are equal.</p></li>
+<li><p>Feel free to experiment with different rule combinations to see what works best.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">classify_sentiment</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">PS</span><span class="p">,</span> <span class="n">NS</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Classifies the sentiment of a given text based on keyword counts.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    text: The text to analyze.</span>
+<span class="sd">    PS: A set of positive keywords.</span>
+<span class="sd">    NS: A set of negative keywords.</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    1 for &quot;pos&quot; or 0 for &quot;neg&quot; depending on the keyword counts.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="k">pass</span>
+  <span class="c1">#</span>
+  <span class="c1"># implement here</span>
+  <span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Evaluation</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Apply your method to the test set and evaluate the performance</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># implement here</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="naive-bayes-classifier-with-bag-of-words">
+<h2>Naive Bayes Classifier with Bag of Words<a class="headerlink" href="#naive-bayes-classifier-with-bag-of-words" title="Link to this heading">#</a></h2>
+<p>In this section, we’ll step into the realm of machine learning by implementing a Naive Bayes Classifier, a popular and straightforward probabilistic classifier that is often effective in text classification tasks.</p>
+<section id="understand-the-naive-bayes-principle">
+<h3>Understand the Naive Bayes Principle<a class="headerlink" href="#understand-the-naive-bayes-principle" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A probabilistic classifier that assumes independence between features.</p></li>
+<li><p>In the context of text classification, it calculates the probability of a document belonging to a certain class (positive or negative) based on the probabilities of the words it contains.</p></li>
+</ul>
+<p>Assuming we have a document <span class="math notranslate nohighlight">\(d\)</span> and we want to classify it into one of the classes <span class="math notranslate nohighlight">\(C\)</span> (which in our case are ‘positive’ or ‘negative’), the Naive Bayes classifier calculates the probability of <span class="math notranslate nohighlight">\(d\)</span> belonging to a class <span class="math notranslate nohighlight">\(c\)</span> in <span class="math notranslate nohighlight">\(C\)</span> based on the words it contains.</p>
+<p>The equation for this can be written as:</p>
+<div class="math notranslate nohighlight">
+\[
+P(c|d) = \frac{P(d|c) \times P(c)}{P(d)}
+\]</div>
+<p>Where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( P(c|d) \)</span> is the posterior probability of class <span class="math notranslate nohighlight">\( c \)</span> given document <span class="math notranslate nohighlight">\( d \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( P(d|c) \)</span> is the likelihood of document <span class="math notranslate nohighlight">\( d \)</span> given class <span class="math notranslate nohighlight">\( c \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( P(c) \)</span> is the prior probability of class <span class="math notranslate nohighlight">\( c \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( P(d) \)</span> is the probability of document <span class="math notranslate nohighlight">\( d \)</span>.</p></li>
+</ul>
+<p>For text classification:
+$<span class="math notranslate nohighlight">\(
+P(d|c) = P(w_1|c) \times P(w_2|c) \times ... \times P(w_n|c)
+\)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\( d \)</span> is composed of words <span class="math notranslate nohighlight">\( w_1, w_2, ..., w_n \)</span>, and each <span class="math notranslate nohighlight">\( P(w_i|c) \)</span> is the probability of word <span class="math notranslate nohighlight">\( w_i \)</span> occurring in documents of class <span class="math notranslate nohighlight">\( c \)</span>.</p>
+</section>
+<section id="feature-extraction-bag-of-words">
+<h3>Feature Extraction: Bag of Words<a class="headerlink" href="#feature-extraction-bag-of-words" title="Link to this heading">#</a></h3>
+<p>In this stage, you’ll transform your text data into a format suitable for the Naive Bayes Classifier, using the ‘Bag of Words’ (BoW) model.</p>
+<p>Follow these steps to implement the BoW model:</p>
+<p><strong>1</strong>. <strong>Text Preprocessing</strong></p>
+<ul class="simple">
+<li><p>Remove punctuation and special characters.</p></li>
+<li><p>Convert all text to lowercase.</p></li>
+<li><p>Split text into individual words.</p></li>
+<li><p>Remove commonly used words that do not contribute to the meaning of the text.</p>
+<ul>
+<li><p>e.g., use <a class="reference external" href="https://www.nltk.org/">NLTK</a>’s stopwords list</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># implement here</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Vocabulary Building and Vectorization</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>List all unique words from the dataset to form a vocabulary.</p></li>
+<li><p>Represent each document as a vector, where each dimension corresponds to a word in the vocabulary, and the value is the frequency of the word in the document.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># implement here</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="training-a-naive-bayes-classifier">
+<h3>Training a Naive Bayes Classifier<a class="headerlink" href="#training-a-naive-bayes-classifier" title="Link to this heading">#</a></h3>
+<p><strong>Note</strong>: <em>Use the training set to train your model</em></p>
+<ol class="arabic simple">
+<li><p><strong>Probability Calculation</strong>:</p>
+<ul class="simple">
+<li><p>Calculate the prior probabilities for each class (positive and negative).</p></li>
+<li><p>For each class, count the frequency of each word in the vocabulary.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># implement here</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Conditional Probability Calculation with Smoothing</strong>:</p>
+<ul class="simple">
+<li><p>Compute the conditional probabilities <span class="math notranslate nohighlight">\( P(w_i|c) \)</span> for each word <span class="math notranslate nohighlight">\( w_i \)</span> in your vocabulary and each class <span class="math notranslate nohighlight">\( c \)</span>, applying Laplace smoothing to handle zero probabilities.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># implement here</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Classifier Implementation and Document Classification</strong>:</p>
+<ul class="simple">
+<li><p>Implement the Naive Bayes formula to calculate <span class="math notranslate nohighlight">\( P(c|d) \)</span> for each document in the test set.</p></li>
+<li><p>Classify each document into the class with the highest calculated probability.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">classify_document</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Classifies a given document using the Naive Bayes classifier.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    document: The text document to classify.</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    The predicted class (&#39;pos&#39; or &#39;neg&#39;).</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="k">pass</span>
+  <span class="c1">#</span>
+  <span class="c1"># implement here</span>
+  <span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Performance Evaluation</strong></p>
+<ul class="simple">
+<li><p>Evaluate the classifier using metrics like accuracy, precision, recall, and F1 score, comparing the predicted class labels against the true labels of the test set.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># implement here</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="naive-bayes-classifier-with-tf-idf">
+<h2>Naive Bayes Classifier with TF-IDF<a class="headerlink" href="#naive-bayes-classifier-with-tf-idf" title="Link to this heading">#</a></h2>
+<p><strong>Term Frequency-Inverse Document Frequency (TF-IDF)</strong> is a numerical statistic that reflects how important a word is to a document in a collection or corpus.</p>
+<p>It is often used in text mining and information retrieval to transform the textual data into a format more suitable for machine learning algorithms.</p>
+<p>The importance increases proportionally to the number of times a word appears in the document but is offset by the frequency of the word in the corpus.</p>
+<p>This helps to adjust for the fact that some words appear more frequently in general.</p>
+<p>For a given document <span class="math notranslate nohighlight">\( d \)</span> and a class <span class="math notranslate nohighlight">\( c \)</span> in a set of classes <span class="math notranslate nohighlight">\( C \)</span>, TF-IDF can be particularly insightful. It allows us to:</p>
+<ol class="arabic simple">
+<li><p><strong>Distinguish Important Words in Each Document</strong>: By calculating the TF-IDF score for each word in document <span class="math notranslate nohighlight">\( d \)</span>, we can identify which words are particularly characteristic of that document compared to other documents in the corpus.</p></li>
+<li><p><strong>Understand Word Significance Across Classes</strong>: In a classification task, TF-IDF can highlight which words are most descriptive of documents belonging to class <span class="math notranslate nohighlight">\( c \)</span>, as opposed to those in other classes in <span class="math notranslate nohighlight">\( C \)</span>.</p></li>
+<li><p><strong>Improve Classification Models</strong>: When used as features in machine learning models, TF-IDF vectors provide a more nuanced representation of text data than simple word counts, potentially leading to more accurate predictions in tasks like sentiment analysis or topic classification.</p></li>
+</ol>
+<p>In the following section, we’ll use Python and a machine learning library to apply TF-IDF to a text classification problem, leveraging its potential to enhance the performance of our Naive Bayes Classifier.</p>
+<p>TF-IDF is calculated using two components: Term Frequency (TF) and Inverse Document Frequency (IDF).</p>
+<p><strong>Term Frequency (TF)</strong>:
+TF measures how frequently a term occurs in a document.
+It’s calculated as:</p>
+<div class="math notranslate nohighlight">
+\[
+     \text{TF}(t, d) = \frac{n_{t, d}}{n_{d}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\( n_{t, d} \)</span> is the number of occurrences of term <span class="math notranslate nohighlight">\( t \)</span> in document <span class="math notranslate nohighlight">\( d \)</span>, and <span class="math notranslate nohighlight">\( n_{d} \)</span> is the total number of terms in document <span class="math notranslate nohighlight">\(d\)</span>.</p>
+<p><strong>Inverse Document Frequency (IDF)</strong>:
+IDF measures how important a term is across a set of documents or corpus.
+It’s calculated as:</p>
+<div class="math notranslate nohighlight">
+\[
+     \text{IDF}(t, D) = \log \left( \frac{N_D}{n_{D, t}} \right)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\( N_D \)</span> is the total number of documents in the corpus <span class="math notranslate nohighlight">\( D \)</span>, and <span class="math notranslate nohighlight">\( n_{D, t} \)</span> is the number of documents with term <span class="math notranslate nohighlight">\( t \)</span>.</p>
+<p>Finally, the TF-IDF score of a term is the product of its TF and IDF scores:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \text{IDF}(t, D)
+\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( t \)</span> is a term.</p></li>
+<li><p><span class="math notranslate nohighlight">\( d \)</span> is a document.</p></li>
+<li><p><span class="math notranslate nohighlight">\( D \)</span> is the corpus of documents.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>TF-IDF Vectorization</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Utilize scikit-learn’s TfidfVectorizer to transform the text data into TF-IDF features.</p></li>
+<li><p>This involves converting the raw documents into a matrix of TF-IDF features.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># implement here</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Train the Naive Bayes Classifier</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Use scikit-learn’s Naive Bayes implementation (like <code class="docutils literal notranslate"><span class="pre">MultinomialNB</span></code>) to train the model on the TF-IDF vectors.</p></li>
+<li><p>Fit the model to the training data.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># implement here</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Model Evaluation</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Evaluate the performance of your model on the testing set.</p></li>
+<li><p>Use metrics such as accuracy, precision, recall, and F1 score to understand the effectiveness of your model.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># implement here</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Parameter Tuning (Optional)</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Experiment with different parameters of TfidfVectorizer and the Naive Bayes model to optimize performance.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># implement here</span>
+<span class="c1">#</span>
+
+<span class="c1"># For examples:</span>
+
+<span class="c1"># 1. **Parameter Tuning for TfidfVectorizer**</span>
+<span class="c1"># - `max_features`: Control the maximum number of features in the vocabulary.</span>
+<span class="c1"># - `min_df`: Set the minimum document frequency below which a word is ignored.</span>
+<span class="c1"># - `max_df`: Set the maximum document frequency above which a word is ignored.</span>
+<span class="c1"># - `stop_words`: Specify a list of stop words to be excluded from the vocabulary.</span>
+<span class="c1"># - `ngram_range`: Specify the range of n-grams to be considered as features.</span>
+<span class="c1">#</span>
+<span class="c1"># 2. **Parameter Tuning for Naive Bayes Classifier**</span>
+<span class="c1"># - `alpha`: Adjust the smoothing parameter to control the influence of prior probabilities.</span>
+<span class="c1"># - `fit_prior`: Enable or disable learning class prior probabilities from the data.</span>
+<span class="c1"># - `class_prior`: Set prior probabilities for each class manually.</span>
+<span class="c1">#</span>
+<span class="c1"># 3. **Grid Search and Cross-Validation**</span>
+<span class="c1"># - Use a technique like grid search or randomized search to evaluate multiple combinations of parameters systematically.</span>
+<span class="c1"># - Perform cross-validation to assess the performance of different parameter settings objectively.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="statistical-significance-testing">
+<h2>Statistical Significance Testing<a class="headerlink" href="#statistical-significance-testing" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Compare performance between classifers built in previous sections:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Hand-coded Rule</p></li>
+<li><p>BoW</p></li>
+<li><p>TF-IDF</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Are the results statistically significant?</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to VmeanSETH-kH’s Jupyter NoteBook</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter-2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Understanding Word Embeddings</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-sentiment-analysis">Task: Sentiment Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">Data Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hand-coded-rules">Hand-coded Rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-classifier-with-bag-of-words">Naive Bayes Classifier with Bag of Words</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understand-the-naive-bayes-principle">Understand the Naive Bayes Principle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-extraction-bag-of-words">Feature Extraction: Bag of Words</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-a-naive-bayes-classifier">Training a Naive Bayes Classifier</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-classifier-with-tf-idf">Naive Bayes Classifier with TF-IDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-significance-testing">Statistical Significance Testing</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By VmeanSETH-kH
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
