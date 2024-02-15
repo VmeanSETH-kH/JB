@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>00) Reversed string &#8212; VmeanSETH-kH Jupyter Book</title>
+    <title>NLP 100 Exercises &#8212; VmeanSETH-kH Jupyter Book</title>
   
   
   
@@ -180,16 +180,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chapter-1.html">Basic Machine Learning in NLP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapter-2.html">Understanding Word Embeddings</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">00) Reversed string</a></li>
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">NLP 100 Exercises</a></li>
 
 
 </ul>
@@ -377,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>00) Reversed string</h1>
+    <h1>NLP 100 Exercises</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -387,24 +378,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">00) Reversed string</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#schoolded">01) “schoolded”</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#shoe-cold-schooled">02) “shoe” + “cold” = “schooled”</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1">method 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2">method 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">NLP 100 Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversed-string">00) Reversed string</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schoolded">01) “schoolded”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shoe-cold-schooled">02) “shoe” + “cold” = “schooled”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1">method 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2">method 2</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pi">03) Pi</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#atomic-symbols">04) Atomic symbols</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">method 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">method 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pi">03) Pi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atomic-symbols">04) Atomic symbols</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">method 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">method 2</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#n-gram">05) n-gram</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#set">06) Set</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#template-based-sentence-generation">07) Template-based sentence generation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cipher-text">08) cipher text</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#typoglycemia">09) Typoglycemia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-gram">05) n-gram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set">06) Set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#template-based-sentence-generation">07) Template-based sentence generation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cipher-text">08) cipher text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typoglycemia">09) Typoglycemia</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-2-unix-commands">Chapter 2: UNIX Commands</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-count">10) Line count</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-tabs-into-spaces">11) Replace tabs into spaces</a></li>
@@ -436,9 +430,11 @@ document.write(`
                 <article class="bd-article">
                   
   <p>link: <a class="reference external" href="https://nlp100.github.io/en/ch01.html">https://nlp100.github.io/en/ch01.html</a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="nlp-100-exercises">
+<h1>NLP 100 Exercises<a class="headerlink" href="#nlp-100-exercises" title="Link to this heading">#</a></h1>
 <p>#chapter 1: Warm-up</p>
 <section id="reversed-string">
-<h1>00) Reversed string<a class="headerlink" href="#reversed-string" title="Link to this heading">#</a></h1>
+<h2>00) Reversed string<a class="headerlink" href="#reversed-string" title="Link to this heading">#</a></h2>
 <p>sequence[start:stop:step]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -457,7 +453,7 @@ document.write(`
 </div>
 </section>
 <section id="schoolded">
-<h1>01) “schoolded”<a class="headerlink" href="#schoolded" title="Link to this heading">#</a></h1>
+<h2>01) “schoolded”<a class="headerlink" href="#schoolded" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">original_str</span> <span class="o">=</span> <span class="s2">&quot;schooled&quot;</span>
@@ -474,9 +470,9 @@ document.write(`
 </div>
 </section>
 <section id="shoe-cold-schooled">
-<h1>02) “shoe” + “cold” = “schooled”<a class="headerlink" href="#shoe-cold-schooled" title="Link to this heading">#</a></h1>
+<h2>02) “shoe” + “cold” = “schooled”<a class="headerlink" href="#shoe-cold-schooled" title="Link to this heading">#</a></h2>
 <section id="method-1">
-<h2>method 1<a class="headerlink" href="#method-1" title="Link to this heading">#</a></h2>
+<h3>method 1<a class="headerlink" href="#method-1" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>zip() : pairing each charactoer of str1 and str2. Here, zip(str1, str1) will create pairs like (‘s’,’c’), (‘h’,’o’), (‘o’, ‘l’), (‘e’, ‘d’)</p></li>
 <li><p>“ “.join() : take a list of strings and joins them together without any separator</p></li>
@@ -499,7 +495,7 @@ document.write(`
 </div>
 </section>
 <section id="method-2">
-<h2>method 2<a class="headerlink" href="#method-2" title="Link to this heading">#</a></h2>
+<h3>method 2<a class="headerlink" href="#method-2" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># method 2</span>
@@ -524,7 +520,7 @@ document.write(`
 </section>
 </section>
 <section id="pi">
-<h1>03) Pi<a class="headerlink" href="#pi" title="Link to this heading">#</a></h1>
+<h2>03) Pi<a class="headerlink" href="#pi" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics&quot;</span>
@@ -552,9 +548,9 @@ document.write(`
 </div>
 </section>
 <section id="atomic-symbols">
-<h1>04) Atomic symbols<a class="headerlink" href="#atomic-symbols" title="Link to this heading">#</a></h1>
+<h2>04) Atomic symbols<a class="headerlink" href="#atomic-symbols" title="Link to this heading">#</a></h2>
 <section id="id1">
-<h2>method 1<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h3>method 1<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;Hi He Lied Because Boron Could Not Oxidize Fluorine. New Nations Might Also Sign Peace Security Clause. Arthur King Can&quot;</span>
@@ -602,7 +598,7 @@ document.write(`
 </div>
 </section>
 <section id="id2">
-<h2>method 2<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h3>method 2<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Hi He Lied Because Boron Could Not Oxidize Fluorine. New Nations Might Also Sign Peace Security Clause. Arthur King Can&quot;</span>
@@ -646,7 +642,7 @@ document.write(`
 </section>
 </section>
 <section id="n-gram">
-<h1>05) n-gram<a class="headerlink" href="#n-gram" title="Link to this heading">#</a></h1>
+<h2>05) n-gram<a class="headerlink" href="#n-gram" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ngrams</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;word&#39;</span><span class="p">):</span>
@@ -703,7 +699,7 @@ letter test
 </div>
 </section>
 <section id="set">
-<h1>06) Set<a class="headerlink" href="#set" title="Link to this heading">#</a></h1>
+<h2>06) Set<a class="headerlink" href="#set" title="Link to this heading">#</a></h2>
 <p>Let the sets of letter bi-grams from the words “paraparaparadise” and “paragraph” <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>, respectively. Obtain the union, intersection, difference of the two sets. In addition, check whether the bigram “se” is included in the sets <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -736,12 +732,12 @@ letter test
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X: {&#39;se&#39;, &#39;pa&#39;, &#39;di&#39;, &#39;is&#39;, &#39;ad&#39;, &#39;ap&#39;, &#39;ra&#39;, &#39;ar&#39;}
-Y: {&#39;gr&#39;, &#39;pa&#39;, &#39;ph&#39;, &#39;ag&#39;, &#39;ap&#39;, &#39;ra&#39;, &#39;ar&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X: {&#39;pa&#39;, &#39;ra&#39;, &#39;ad&#39;, &#39;ap&#39;, &#39;di&#39;, &#39;is&#39;, &#39;se&#39;, &#39;ar&#39;}
+Y: {&#39;pa&#39;, &#39;ra&#39;, &#39;ap&#39;, &#39;gr&#39;, &#39;ph&#39;, &#39;ag&#39;, &#39;ar&#39;}
 
-Union: {&#39;se&#39;, &#39;gr&#39;, &#39;pa&#39;, &#39;di&#39;, &#39;is&#39;, &#39;ph&#39;, &#39;ag&#39;, &#39;ad&#39;, &#39;ap&#39;, &#39;ra&#39;, &#39;ar&#39;}
-Intersection: {&#39;ap&#39;, &#39;ra&#39;, &#39;ar&#39;, &#39;pa&#39;}
-Difference: {&#39;is&#39;, &#39;ad&#39;, &#39;se&#39;, &#39;di&#39;}
+Union: {&#39;pa&#39;, &#39;ra&#39;, &#39;ad&#39;, &#39;ap&#39;, &#39;di&#39;, &#39;gr&#39;, &#39;ph&#39;, &#39;ag&#39;, &#39;is&#39;, &#39;se&#39;, &#39;ar&#39;}
+Intersection: {&#39;ap&#39;, &#39;ar&#39;, &#39;pa&#39;, &#39;ra&#39;}
+Difference: {&#39;ad&#39;, &#39;se&#39;, &#39;is&#39;, &#39;di&#39;}
 
 &#39;se&#39; is include in X
 &#39;se&#39; is NOT include　in Y
@@ -751,7 +747,7 @@ Difference: {&#39;is&#39;, &#39;ad&#39;, &#39;se&#39;, &#39;di&#39;}
 </div>
 </section>
 <section id="template-based-sentence-generation">
-<h1>07) Template-based sentence generation<a class="headerlink" href="#template-based-sentence-generation" title="Link to this heading">#</a></h1>
+<h2>07) Template-based sentence generation<a class="headerlink" href="#template-based-sentence-generation" title="Link to this heading">#</a></h2>
 <p>Implement a function that receives arguments, x, y, and z and returns a string “{y} is {z} at {x}”, where “{x}”, “{y}”, and “{z}” denote the values of x, y, and z, respectively. In addition, confirm the return string by giving the arguments x=12, y=”temperature”, and z=22.4.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -770,7 +766,7 @@ Difference: {&#39;is&#39;, &#39;ad&#39;, &#39;se&#39;, &#39;di&#39;}
 </div>
 </section>
 <section id="cipher-text">
-<h1>08) cipher text<a class="headerlink" href="#cipher-text" title="Link to this heading">#</a></h1>
+<h2>08) cipher text<a class="headerlink" href="#cipher-text" title="Link to this heading">#</a></h2>
 <p>Implement a function cipher that converts a given string with the specification:</p>
 <p>Every alphabetical lowercase letter c is converted to a letter whose ASCII code is (219 - [the ASCII code of c])
 Keep other letters unchanged
@@ -799,7 +795,7 @@ Use this function to cipher and decipher an English message.</p>
 </div>
 </section>
 <section id="typoglycemia">
-<h1>09) Typoglycemia<a class="headerlink" href="#typoglycemia" title="Link to this heading">#</a></h1>
+<h2>09) Typoglycemia<a class="headerlink" href="#typoglycemia" title="Link to this heading">#</a></h2>
 <p>Write a program with the specification:</p>
 <p>Receive a word sequence separated by space
 For each word in the sequence:
@@ -830,11 +826,12 @@ Observe the result by giving a sentence, e.g., “I couldn’t believe that I co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Do&#39;nt Tor!ll! Farm Fr!i!ts! I need the Bfuf!!! Well pelayd Br!o!&quot;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Do&#39;nt Trl!ol! Farm F!irt!s! I need the B!uf!f! Well plaeyd B!or!&quot;
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="chapter-2-unix-commands">
 <h1>Chapter 2: UNIX Commands<a class="headerlink" href="#chapter-2-unix-commands" title="Link to this heading">#</a></h1>
@@ -1296,24 +1293,27 @@ or available locally via: info &#39;(coreutils) sort invocation&#39;
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">00) Reversed string</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#schoolded">01) “schoolded”</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#shoe-cold-schooled">02) “shoe” + “cold” = “schooled”</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1">method 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2">method 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">NLP 100 Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversed-string">00) Reversed string</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schoolded">01) “schoolded”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shoe-cold-schooled">02) “shoe” + “cold” = “schooled”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1">method 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2">method 2</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pi">03) Pi</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#atomic-symbols">04) Atomic symbols</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">method 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">method 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pi">03) Pi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atomic-symbols">04) Atomic symbols</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">method 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">method 2</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#n-gram">05) n-gram</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#set">06) Set</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#template-based-sentence-generation">07) Template-based sentence generation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cipher-text">08) cipher text</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#typoglycemia">09) Typoglycemia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-gram">05) n-gram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set">06) Set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#template-based-sentence-generation">07) Template-based sentence generation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cipher-text">08) cipher text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typoglycemia">09) Typoglycemia</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-2-unix-commands">Chapter 2: UNIX Commands</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-count">10) Line count</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-tabs-into-spaces">11) Replace tabs into spaces</a></li>
