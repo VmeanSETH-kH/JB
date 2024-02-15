@@ -2,5 +2,3 @@
 
 Hello guys!!!
 
-```{tableofcontents}
-```
